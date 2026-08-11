@@ -1,8 +1,20 @@
+
 import {LinkedList} from './LinkedList.js'
 
 
 let test = new LinkedList
-
+console.log("hi",test.size())
 test.append(2)
-
+test.size()
+test.prepend(1)
+test.size()
+test.append(3)
+test.size()
+test.append(5)
+test.prepend(0)
+test.append(56)
+test.prepend(45)
+console.log("hi",test.size())
+console.log("this is the head value", test.returnHead())
+console.log("this is the tail value: ", test.tail())
 console.log(test)
