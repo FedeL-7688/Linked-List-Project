@@ -31,7 +31,7 @@ class LinkedList {
   returnHead() {
     return this.head.value;
   }
-  tail() {
+  returnTail() {
     if (this.head == null) {
       return undefined;
     } else {
@@ -44,8 +44,18 @@ class LinkedList {
       }
     }
   }
-  // at(index){
-  // }
+  at(index){ 
+    let counter = 0
+    let actual = this.head
+    while (actual!=null){
+      if (counter==index){
+        return "the value at",index,"is",actual.value
+      }
+      actual = actual.nextNode;
+      counter++
+      
+    }
+  }
   // pop(){
   //     return list.pop()
   // }
