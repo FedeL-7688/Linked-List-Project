@@ -56,19 +56,51 @@ class LinkedList {
       
     }
   }
-  // pop(){
-  //     return list.pop()
-  // }
-  // contains(val){
-  //     return list.includes(val)
+    pop(){ 
+        let prevEl = this.head
+        this.head = prevEl.nextNode
+        prevEl.nextNode = undefined
 
-  // }
-  // findIndex(val){
-  //     return list.indexOf(val)
-  // }
-  // toString(){
 
-  // }
+        this._size--
+        return prevEl.value
+        }
+    
+   contains(val){
+    let actual = this.head
+    while (actual.nextNode !== null)
+      {
+        if (actual.value== val){
+          return true
+        }
+        actual = actual.nextNode
+         
+      }
+      return false  
+ }
+  findIndex(val){
+      let index = 0
+      let actual = this.head
+      while (actual.nextNode != null){
+    
+        if (actual.value == val){
+          return index
+        }
+        
+        actual = actual.nextNode
+        index++
+        
+      }
+      return -1
+    }
+   toString(){ results = []
+
+    let actual = this.head
+    while (actual.nextNode !=null){
+      
+    }
+
+  }
 }
 
 export { LinkedList };
