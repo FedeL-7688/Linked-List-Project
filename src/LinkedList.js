@@ -1,5 +1,8 @@
+
 import { Node } from "./node.js";
 import "./style.css";
+
+
 
 class LinkedList {
   constructor() {
@@ -93,13 +96,47 @@ class LinkedList {
       }
       return -1
     }
-   toString(){ results = []
+   toString()
+   { if (!this.head){
+    return ""
+  }
 
+  let result = "";
+  let actual = this.head;
+
+  while (actual) {
+    result += `( ${actual.value} ) -> `;
+    actual = actual.nextNode;
+  }
+
+  result += "null";
+
+  return result;
+  }
+  insertAt(index,...values){
+     let counter = 0
     let actual = this.head
-    while (actual.nextNode !=null){
+    if (index == 0){
+      values.forEach((val)=>{
+         let objVal = new Node(val)
+        objVal.nextNode = objVal
+       // actual = objVal
+      })
+    }
+    while (actual!=null){
+       if (counter==index-1){
+         let lastToAdd = actual.nextNode
+        values.forEach((val)=>{
+         let objVal = new Node(val)
+        actual.nextNode = objVal
+        actual = objVal
+        })
+        actual.nextNode = lastToAdd
+      }
+      actual = actual.nextNode;
+      counter++
       
     }
-
   }
 }
 
